@@ -22,8 +22,6 @@
 #	error "Function signature macro not defined for this compiler."
 #endif
 
-#define KW_MAX_TYPE_INDEX_GENERATORS 64
-
 namespace kawa
 {
 	namespace meta
