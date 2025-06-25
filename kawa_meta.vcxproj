@@ -129,7 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="examples.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="meta.h" />
