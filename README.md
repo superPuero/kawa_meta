@@ -1,4 +1,10 @@
-#⛓️‍💥 kawa::meta
+# ⛓️‍💥 **kawa::meta**
+![language](https://img.shields.io/badge/C%2B%2B-20-blue.svg)
+![status](https://img.shields.io/badge/stability-stable-brightgreen)
+
+*A tiny, lightning‑fast C++20 Entity‑Component System*
+
+---
 
 A lightweight, header-only C++17+ library for compile-time type name introspection and hashing.
 
