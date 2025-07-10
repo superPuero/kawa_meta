@@ -11,7 +11,7 @@ int func(float&)
 
 float func2(double)
 {
-	return 42;
+	return 42.0f;
 }
 
 int main()
