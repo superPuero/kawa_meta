@@ -89,5 +89,47 @@ namespace kawa
 			uint64_t hash;
 		};
 
+		template<typename RetTy, typename...ArgTy>
+		struct function_traits {};
+
+		template<typename RetTy, typename...ArgTy>
+		struct function_traits<RetTy(*)(ArgTy...)>
+		{
+			using return_type = RetTy;
+			using args_tuple = typename std::tuple<ArgTy...>;
+			template<size_t i>
+			using arg_at = typename std::tuple_element_t<i, args_tuple>;
+		};
+
+		template<typename RetTy, typename...ArgTy>
+		struct function_traits<RetTy(&)(ArgTy...)>
+		{
+			using return_type = RetTy;
+			using args_tuple = typename std::tuple<ArgTy...>;
+			template<size_t i>
+			using arg_at = typename std::tuple_element_t<i, args_tuple>;
+		};
+
+		template<typename RetTy, typename...ArgTy>
+		struct function_traits<RetTy(ArgTy...)>
+		{
+			using return_type = RetTy;
+			using args_tuple = typename std::tuple<ArgTy...>;
+			template<size_t i>
+			using arg_at = typename std::tuple_element_t<i, args_tuple>;
+		};
+
+		template<typename T>
+		struct function_traits<T> : function_traits<decltype(&T::operator())> {};
+
+		template<typename RetTy, typename ObjTy, typename...ArgTy>
+		struct function_traits<RetTy(ObjTy::*)(ArgTy...) const>
+		{
+			using return_type = RetTy;
+			using args_tuple = typename std::tuple<ArgTy...>;
+			template<size_t i>
+			using arg_at = typename std::tuple_element_t<i, args_tuple>;
+		};
+
 	}
 }
