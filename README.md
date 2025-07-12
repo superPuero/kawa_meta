@@ -1,6 +1,6 @@
 # ⛓️‍💥 **kawa::meta**
 
-A lightweight, header-only C++17+ library for compile-time type name introspection and hashing.
+A C++17+ reflection and meta utility library for compile-time type name introspection and hashing.
 
 ## Features
 
