@@ -34,7 +34,7 @@ int main()
 
 	constexpr std::string_view name = kmeta::type_name<foo>();
 	constexpr uint64_t hash = kmeta::type_hash<foo>();
-	constexpr kawa::meta::type_info info = kmeta::type_info::create<int>();
+	constexpr kawa::meta::type_info info(kmeta::construct_tag<int>{});
 
 	static_assert(std::is_same_v<kmeta::function_traits<decltype(func)>::return_type, int>);
 
